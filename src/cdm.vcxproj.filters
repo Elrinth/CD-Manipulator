@@ -1,0 +1,576 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="web">
+      <UniqueIdentifier>{38b85001-6be5-4fd4-8474-5e225af11cc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="web\bin">
+      <UniqueIdentifier>{f0d04aed-fb41-44ab-8a6f-c7ce780fe9c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="web\program">
+      <UniqueIdentifier>{1bf57250-a0b6-407f-ad9a-ae8c4b591a9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="web\skin">
+      <UniqueIdentifier>{c170ca4f-34fa-44e8-9917-98c618e81074}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="help">
+      <UniqueIdentifier>{1a3548cf-b41d-437d-b023-bec1377d790a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="help\about">
+      <UniqueIdentifier>{297ae3ef-9b8b-4eb9-aea6-63d1a2fdbd54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="help\install">
+      <UniqueIdentifier>{12188df6-0b7c-42a5-8484-26df2e251bb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="help\ts">
+      <UniqueIdentifier>{d3473063-6b6e-4f56-89b6-e295e4303382}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="help\usage">
+      <UniqueIdentifier>{79fd9292-e485-40c5-ae9f-8452231a9e5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cpp">
+      <UniqueIdentifier>{12131dce-1908-4bdd-84b6-ed9e0a02a59b}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
+    </Filter>
+    <Filter Include="headers">
+      <UniqueIdentifier>{0a83d7a4-e237-4af6-be99-c7b92d08cd11}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
+    </Filter>
+    <Filter Include="resources">
+      <UniqueIdentifier>{71a1e1e8-a620-4a3c-97cc-a96e156bc805}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;jpg;jpeg;jpe;manifest</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Aspi.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="AspiDriver.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ButtonEx.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="CDController.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="CDM.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="CDMDlg.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="CDType.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="CDWriter.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="CheckSector.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateProgressDialog.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateThread.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="CueSheetParser.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="DeviceList.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="DirStructure.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="DriveCapabilityDialog.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="EraseDialog.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="FileList.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageFile.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IsoCreator.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="IsoWriter.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Language.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="LanguageDialog.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="LogWindow.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="MasteringFileDialog.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="MasteringPage1.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="MasteringPage2.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="MasteringPage3.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageDialog.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="MMCReader.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="MMCSubcodeReader.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="MMCWriter.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="MsfDialog.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="PBBuffer.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="PregapAnalyzer.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadProgressDialog.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadSettingDialog.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadSettingDialog1.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadSettingDialog2.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadSettingDialog3.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadSettingDialog4.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadThread.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadThreadAlpha.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadThreadCompare.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadThreadMS.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadThreadSS.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadTrackDialog.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Setting.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="SettingDialog.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="SettingPage1.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="SettingPage2.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="SettingPage3.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="SettingPage4.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="SptiDriver.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="SubCodeGenerator.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="SubcodeGeneratorMS.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="SubQProgressDialog.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="SubQThread.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ThemeController.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="TocWindow.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="WriteProgressDialog.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="WriteSettingDialog.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="WriteThread.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Aspi.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="AspiDriver.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ButtonEx.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CDController.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CDM.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CDMDlg.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CDType.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CDWriter.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CheckSector.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateProgressDialog.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateThread.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CueSheetParser.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceList.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="DirStructure.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="DriveCapabilityDialog.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="EraseDialog.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="FileList.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageFile.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="IsoCreator.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="IsoWriter.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Language.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="LanguageDialog.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="LogWindow.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="MasteringFileDialog.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="MasteringPage1.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="MasteringPage2.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="MasteringPage3.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageDialog.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="MMCReader.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="MMCSubcodeReader.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="MMCWriter.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="MsfDialog.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="PBBuffer.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="PregapAnalyzer.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ReadProgressDialog.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ReadSettingDialog.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ReadSettingDialog1.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ReadSettingDialog2.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ReadSettingDialog3.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ReadSettingDialog4.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ReadThread.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ReadTrackDialog.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Setting.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SettingDialog.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SettingPage1.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SettingPage2.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SettingPage3.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SettingPage4.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SptiDriver.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SubCodeGenerator.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SubcodeGeneratorMS.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SubQProgressDialog.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SubQThread.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ThemeController.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="TocWindow.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="WriteProgressDialog.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="WriteSettingDialog.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="WriteThread.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\bitmap2.bmp">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\button1.bmp">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\cdm.ico">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\CreateImage.bmp">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\Duplicate.bmp">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\Exit.bmp">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\FileList.bmp">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\FileTree.bmp">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\icon1.ico">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\idr_main.ico">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\LogType.bmp">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\Mastering.bmp">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\ReadTrack.bmp">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\Recognize.bmp">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\SubQ.bmp">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\WriteImage.bmp">
+      <Filter>resources</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="res\cdm.manifest">
+      <Filter>resources</Filter>
+    </Manifest>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="cdm.rc">
+      <Filter>resources</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\cdm.rc2">
+      <Filter>resources</Filter>
+    </None>
+    <None Include="..\..\MyData\web\storeroom\cdm\attention.html">
+      <Filter>web</Filter>
+    </None>
+    <None Include="..\..\MyData\web\storeroom\cdm\cdmnet.html">
+      <Filter>web</Filter>
+    </None>
+    <None Include="..\..\MyData\web\storeroom\cdm\index.html">
+      <Filter>web</Filter>
+    </None>
+    <None Include="..\..\MyData\web\storeroom\cdm\index_e.html">
+      <Filter>web</Filter>
+    </None>
+    <None Include="..\..\MyData\web\storeroom\cdm\link.html">
+      <Filter>web</Filter>
+    </None>
+    <None Include="..\..\MyData\web\storeroom\cdm\othersoft.html">
+      <Filter>web</Filter>
+    </None>
+    <None Include="..\..\MyData\web\storeroom\cdm\profile.html">
+      <Filter>web</Filter>
+    </None>
+    <None Include="..\..\MyData\web\storeroom\cdm\bin\index.html">
+      <Filter>web\bin</Filter>
+    </None>
+    <None Include="..\..\MyData\web\storeroom\cdm\program\index.html">
+      <Filter>web\program</Filter>
+    </None>
+    <None Include="..\..\MyData\web\storeroom\cdm\skin\index.html">
+      <Filter>web\skin</Filter>
+    </None>
+    <None Include="..\cdm-help\top.html">
+      <Filter>help</Filter>
+    </None>
+    <None Include="..\cdm-help\about\about.html">
+      <Filter>help\about</Filter>
+    </None>
+    <None Include="..\cdm-help\about\DriveList.html">
+      <Filter>help\about</Filter>
+    </None>
+    <None Include="..\cdm-help\about\env.html">
+      <Filter>help\about</Filter>
+    </None>
+    <None Include="..\cdm-help\about\history.html">
+      <Filter>help\about</Filter>
+    </None>
+    <None Include="..\cdm-help\install\install.html">
+      <Filter>help\install</Filter>
+    </None>
+    <None Include="..\cdm-help\install\uninstall.html">
+      <Filter>help\install</Filter>
+    </None>
+    <None Include="..\cdm-help\install\update.html">
+      <Filter>help\install</Filter>
+    </None>
+    <None Include="..\cdm-help\ts\faq.html">
+      <Filter>help\ts</Filter>
+    </None>
+    <None Include="..\cdm-help\ts\index.html">
+      <Filter>help\ts</Filter>
+    </None>
+    <None Include="..\cdm-help\ts\NoDetect.html">
+      <Filter>help\ts</Filter>
+    </None>
+    <None Include="..\cdm-help\ts\write_error.html">
+      <Filter>help\ts</Filter>
+    </None>
+    <None Include="..\cdm-help\usage\duplicate.html">
+      <Filter>help\usage</Filter>
+    </None>
+    <None Include="..\cdm-help\usage\index.html">
+      <Filter>help\usage</Filter>
+    </None>
+    <None Include="..\cdm-help\usage\mastering.html">
+      <Filter>help\usage</Filter>
+    </None>
+    <None Include="..\cdm-help\usage\readimg.html">
+      <Filter>help\usage</Filter>
+    </None>
+    <None Include="..\cdm-help\usage\readtrack.html">
+      <Filter>help\usage</Filter>
+    </None>
+    <None Include="..\cdm-help\usage\setting.html">
+      <Filter>help\usage</Filter>
+    </None>
+    <None Include="..\cdm-help\usage\writeimg.html">
+      <Filter>help\usage</Filter>
+    </None>
+    <None Include="Release\copier.cml" />
+    <None Include="Release\English.cml" />
+    <None Include="Release\Italian.cml" />
+    <None Include="Release\Japanese.cml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>
