@@ -32,7 +32,7 @@ struct tTrackData {
 
 typedef struct tTableOfContents{
 	BYTE m_LastTrack;
-	struct tTrackData m_Track[99];
+	struct tTrackData m_Track[999]; // increase from 99 to 999. hopefully it just works...
 	BYTE m_RawTOC[4400];
 } TableOfContents;
 
