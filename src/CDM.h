@@ -9,7 +9,7 @@
 
 #include "resource.h"		// メイン シンボル
 
-#define APP_VERSION		"2.70 Final!"
+#define APP_VERSION		"2.70 Final with Elrinth command line functionality!"
 // CHermit2App:
 // このクラスの実装については、Hermit2.cpp を参照してください。
 //
