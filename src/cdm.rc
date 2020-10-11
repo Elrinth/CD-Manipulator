@@ -1,0 +1,1056 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 日本語 resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+#ifdef _WIN32
+LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
+#pragma code_page(932)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)\r\n"
+    "LANGUAGE 17, 1\r\n"
+    "#pragma code_page(932)\r\n"
+    "#include ""res\\cdm.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // 標準コンポーネント\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\cdm.ico"
+IDR_TOCFRAME            ICON                    "res\\idr_main.ico"
+IDI_ICON1               ICON                    "res\\icon1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 155, 107
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "CD Manipulatorのバージョン情報"
+FONT 9, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,67,42,20,20
+    CTEXT           "CD Manipulator",ID_VERSTRING,12,24,128,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2002 Y.Kanechika（ごーるど）",IDC_AUTHOR,
+                    6,72,144,8
+    DEFPUSHBUTTON   "OK",IDOK,51,84,50,16,WS_GROUP
+    CTEXT           "CD Read, Write, Duplicate, Mastering",IDC_SUBTITLE,12,6,
+                    132,8
+END
+
+IDD_MAIN_DIALOG DIALOGEX 0, 0, 251, 108
+STYLE DS_SETFONT | DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "CD Manipulator"
+MENU IDR_MAINMENU
+FONT 10, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    COMBOBOX        IDC_DRIVELIST,6,6,240,66,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "イメージ作成",ID_TOOL_CREATEIMAGE,6,24,60,30,BS_BITMAP | 
+                    NOT WS_TABSTOP
+    PUSHBUTTON      "トラック読込",ID_TOOL_READTRACK,6,54,60,30,BS_BITMAP | 
+                    NOT WS_TABSTOP
+    PUSHBUTTON      "ライティング",ID_CD_WRITE_IMAGE,66,24,60,30,BS_BITMAP | 
+                    NOT WS_TABSTOP
+    PUSHBUTTON      "ＣＤ再認識",ID_CD_RECOGNIZE,186,24,60,30,BS_BITMAP | 
+                    NOT WS_TABSTOP
+    PUSHBUTTON      "ＣＤ複製",ID_CD_DUPLICATE,126,24,60,30,BS_BITMAP | NOT 
+                    WS_TABSTOP
+    PUSHBUTTON      "サブCH解析",ID_TOOL_SUBQ,126,54,60,30,BS_BITMAP | NOT 
+                    WS_TABSTOP
+    PUSHBUTTON      "マスタリング",ID_TOOL_MASTERING,66,54,60,30,BS_BITMAP | 
+                    NOT WS_TABSTOP
+    PUSHBUTTON      "終了",ID_EXIT,186,54,60,30,BS_BITMAP | NOT WS_TABSTOP
+    LTEXT           "スタティック",IDC_MESSAGE,6,90,240,12,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+END
+
+IDD_READSETTING DIALOGEX 0, 0, 283, 203
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ＣＤイメージ作成"
+FONT 9, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,174,180,48,18
+    PUSHBUTTON      "キャンセル",IDCANCEL,228,180,48,18
+    EDITTEXT        IDC_IMAGENAME,12,36,228,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "イメージファイル（.cue）",IDC_STATIC2,6,24,234,8
+    PUSHBUTTON      "検索",IDC_BROWSFILE,246,30,30,18
+    LTEXT           "選択中のドライブ",IDC_STATIC1,6,6,54,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_DRIVELIST,66,6,210,60,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_ENGINELIST,6,54,270,60,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Under construction",IDC_STATIC,108,108,60,12
+END
+
+IDD_READPROGRESS DIALOGEX 0, 0, 243, 71
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ディスクから読み取り中"
+FONT 9, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    PUSHBUTTON      "中断",IDCANCEL,204,48,36,18
+    LTEXT           "メッセージ",IDC_MESSAGE,6,6,192,12,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    CTEXT           "%",IDC_PERCENT,204,24,36,18,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    CONTROL         "",IDC_PROGRESS,"msctls_progress32",WS_BORDER | 0x1,6,24,
+                    192,18
+    PUSHBUTTON      "ログ",IDC_LOG,6,48,30,18
+    CTEXT           "x1.0",IDC_MULTI,204,6,36,12,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+END
+
+IDD_SETTING DIALOGEX 0, 0, 234, 234
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "各種設定"
+FONT 9, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,126,210,48,18
+    PUSHBUTTON      "キャンセル",IDCANCEL,180,210,48,18
+    CONTROL         "",IDC_STAB,"SysTabControl32",0x0,6,6,222,198
+END
+
+IDD_READTRACK DIALOGEX 0, 0, 275, 203
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "トラック読み込み"
+FONT 9, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,168,180,48,18
+    PUSHBUTTON      "キャンセル",IDCANCEL,222,180,48,18
+    EDITTEXT        IDC_IMAGENAME,12,36,222,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "ファイル名",IDC_STATIC2,6,24,234,8
+    PUSHBUTTON      "検索",IDC_BROWS,240,30,30,18
+    LISTBOX         IDC_FILELIST,12,54,258,42,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "スタティック",IDC_DRIVENAME,66,6,204,12,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    LTEXT           "選択中のドライブ",IDC_STATIC1,6,6,54,12,SS_CENTERIMAGE
+    CONTROL         "読み取りエラーの無視",IDC_IGNORE_READERROR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,138,108,126,8
+    CONTROL         "CDDA読み取りコマンドの自動検知",IDC_AUTODETECT_COMMAND,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,138,144,126,8
+    CONTROL         "CDDAの左右チャンネル入れ替え",IDC_SWAPCHANNEL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,138,132,126,8
+    COMBOBOX        IDC_AUDIOMETHOD,150,156,114,48,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_AUDIOSPEED,42,138,66,66,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "音楽トラックの読み取り速度",IDC_STATIC3,6,126,102,8
+    LTEXT           "データトラックの読み取り速度",IDC_STATIC4,6,156,102,8
+    COMBOBOX        IDC_DATASPEED2,42,168,66,66,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "バーストエラーの読み込みＡＩ",IDC_BURST_ERROR_SCAN,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,138,120,126,8
+    CONTROL         "高度な設定",IDC_EXTMENU,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,6,108,102,8
+END
+
+IDD_SUBQPROGRESS DIALOGEX 0, 0, 195, 71
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "サブチャンネル解析中"
+FONT 9, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    PUSHBUTTON      "中断",IDCANCEL,156,48,36,18
+    CTEXT           "メッセージ",IDC_MESSAGE,12,12,174,12,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "ログ",IDC_LOG,6,48,36,18
+    CTEXT           "セクタ",IDC_SECTOR,138,30,48,12,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+END
+
+IDD_MASTERING_FILE DIALOGEX 0, 0, 403, 245
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_ACCEPTFILES
+CAPTION "ＣＤマスタリング"
+MENU IDR_MASTERING_FILE
+FONT 9, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    PUSHBUTTON      "イメージ作成",IDC_CREATE_ISO,180,222,54,18
+    CONTROL         "",IDC_TAB,"SysTabControl32",WS_TABSTOP,6,6,390,198
+    PUSHBUTTON      "CDへ書き込み",IDC_WRITING,240,222,54,18
+    CTEXT           "サイズ",IDC_IMAGESIZE,6,210,66,14,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "cancel",IDCANCEL,360,222,36,18
+    PUSHBUTTON      "エクスプローラ",IDC_EXPLORER,300,222,54,18
+    COMBOBOX        IDC_DRIVELIST,78,210,72,66,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "CDの高速初期化",ID_CD_ERASE_FAST,90,228,84,12
+    PUSHBUTTON      "CDの完全初期化",ID_CD_ERASE,6,228,84,12
+END
+
+IDD_CREATPROGRESS DIALOGEX 0, 0, 227, 77
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "イメージファイル作成中"
+FONT 9, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    PUSHBUTTON      "中断",IDCANCEL,186,54,36,18
+    CTEXT           "スタティック",IDC_MESSAGE,6,6,216,18,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    CONTROL         "",IDC_PROGRESS,"msctls_progress32",WS_BORDER,6,30,186,
+                    18
+    CTEXT           "%",PERCENT,198,30,24,18,SS_CENTERIMAGE,WS_EX_STATICEDGE
+    PUSHBUTTON      "ログ",IDC_LOG,6,54,30,18
+END
+
+IDD_CALCMSF DIALOGEX 0, 0, 174, 101
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "MSF計算"
+FONT 9, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    PUSHBUTTON      "閉じる",IDCANCEL,60,78,54,18
+    RTEXT           "MSF",IDC_STATIC,6,6,36,8
+    RTEXT           "MSF+150",IDC_STATIC,6,24,36,8
+    RTEXT           "LBA",IDC_STATIC,6,42,36,8
+    RTEXT           "LBA(Hex)",IDC_STATIC,6,60,36,8
+    EDITTEXT        IDC_MSF_M,48,6,18,12,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_MSF_S,72,6,18,12,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_MSF_F,96,6,18,12,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_MSF150_M,48,24,18,12,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_MSF150_S,72,24,18,12,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_MSF150_F,96,24,18,12,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_LBA,48,42,66,12,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_LBAHEX,48,60,66,12,ES_RIGHT | ES_AUTOHSCROLL
+    PUSHBUTTON      "計算",IDC_CALC_MSF,120,6,30,12
+    PUSHBUTTON      "計算",IDC_CALC_MSF150,120,24,30,12
+    PUSHBUTTON      "計算",IDC_CALC_LBA,120,42,30,12
+    PUSHBUTTON      "計算",IDC_CALC_LBAHEX,120,60,30,12
+    PUSHBUTTON      "0",IDC_ZERO,156,6,12,66
+END
+
+IDD_WRITEPROGRESS DIALOGEX 0, 0, 243, 71
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ディスクへ書き込み中"
+FONT 9, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    PUSHBUTTON      "中断",IDCANCEL,204,48,36,18
+    LTEXT           "メッセージ",IDC_MESSAGE,6,6,192,12,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    CONTROL         "",IDC_PROGRESS,"msctls_progress32",WS_BORDER | 0x1,6,24,
+                    192,18
+    CTEXT           "%",IDC_PERCENT,204,24,36,18,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "ログ",IDC_LOG,6,48,30,18
+    LTEXT           "RAW",IDC_STATIC,210,6,18,12,SS_CENTERIMAGE
+    CTEXT           "×",IDC_RAWFLAG,228,6,12,12,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+END
+
+IDD_WRITESETTING DIALOGEX 0, 0, 283, 191
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ＣＤへ書き込み"
+FONT 9, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,174,168,48,18
+    PUSHBUTTON      "キャンセル",IDCANCEL,228,168,48,18
+    LTEXT           "スタティック",IDC_CUEFILE,12,36,228,12,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    LTEXT           "書き込むCue-Sheet",IDC_STATIC2,6,24,240,8
+    PUSHBUTTON      "検索",IDC_BROWSE_CUESHEET,246,30,30,18
+    CONTROL         "バッファ・アンダーラン防止機能を使用する",IDC_BURNPROOF,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,126,72,150,12
+    CONTROL         "テストモード（実際には書き込まない）",IDC_TESTMODE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,60,114,12
+    CONTROL         "レーザー出力の最適化を行う（Power Calibration）",
+                    IDC_OPC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,126,60,150,
+                    12
+    CONTROL         "終了時にディスクを排出する",IDC_EJECT_TRAY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,126,84,150,12
+    CONTROL         "SAO",IDC_WRITEMODE_1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,138,132,24,12
+    CONTROL         "RAW+16",IDC_WRITEMODE_2,"Button",BS_AUTORADIOBUTTON,138,
+                    144,36,12
+    CONTROL         "RAW+96",IDC_WRITEMODE_3,"Button",BS_AUTORADIOBUTTON,204,
+                    132,47,12
+    CONTROL         "RAW+96(Packed)",IDC_WRITEMODE_4,"Button",
+                    BS_AUTORADIOBUTTON,204,144,60,12
+    GROUPBOX        "ライティングコマンド",IDC_COMMAND_FRAME,126,120,150,42
+    CONTROL         "ドライブが書き込み対応かどうか調べる",IDC_CHECK_DRIVE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,126,96,114,12
+    COMBOBOX        IDC_WRITESPEED,36,102,66,78,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "書き込み速度",IDC_STATIC3,6,90,114,8,SS_CENTERIMAGE
+    LTEXT           "選択中のドライブ",IDC_STATIC1,6,6,54,12,SS_CENTERIMAGE
+    CONTROL         "ライティングコマンドの自動検出",IDC_AUTODETECT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,126,108,114,8
+    COMBOBOX        IDC_DRIVELIST,66,6,210,78,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "高度な設定",IDC_EXTMENU,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,6,72,114,12
+END
+
+IDD_ERASE DIALOGEX 0, 0, 187, 59
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "CD-RWの消去"
+FONT 9, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,72,36,42,18
+    CTEXT           "CD-RWメディアの初期化中",IDC_MESSAGE,6,12,174,12
+END
+
+IDD_SELECT_DRIVE DIALOGEX 0, 0, 222, 132
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ドライブの選択"
+FONT 9, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,102,108,54,18
+    PUSHBUTTON      "キャンセル",IDCANCEL,162,108,54,18
+    CONTROL         "",IDC_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | 
+                    LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,6,6,210,96
+END
+
+IDD_DRIVE_CAPABILITY DIALOGEX 0, 0, 275, 173
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ドライブ能力"
+FONT 9, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,216,150,54,18
+    LTEXT           "Drive ID",IDC_STATIC1,12,18,48,12,SS_CENTERIMAGE
+    LTEXT           "ドライブベンダ",IDC_STATIC4,114,18,60,12,SS_CENTERIMAGE
+    LTEXT           "ドライブ製品名",IDC_STATIC5,114,30,60,12,SS_CENTERIMAGE
+    LTEXT           "ファームウェアリビジョン",IDC_STATIC6,114,42,60,12,
+                    SS_CENTERIMAGE
+    CTEXT           "Vendor",IDC_VENDOR,180,18,84,12,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    CTEXT           "Product",IDC_DRIVENAME,180,30,84,12,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    CTEXT           "Revision",IDC_REVISION,180,42,84,12,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    GROUPBOX        "ドライブ情報",IDC_STATIC0,6,6,264,54
+    LTEXT           "RAW+96",IDC_STATIC,114,102,42,12,SS_CENTERIMAGE
+    LTEXT           "SAO",IDC_STATIC,114,78,42,12,SS_CENTERIMAGE
+    CTEXT           "S",IDC_SAO,162,78,12,12,SS_CENTERIMAGE,WS_EX_STATICEDGE
+    CTEXT           "S",IDC_RAW96,162,102,12,12,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    LTEXT           "RAW+16",IDC_STATIC,114,90,42,12,SS_CENTERIMAGE
+    CTEXT           "S",IDC_RAW16,162,90,12,12,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    LTEXT           "RAW+96(P)",IDC_STATIC,114,114,42,12,SS_CENTERIMAGE
+    CTEXT           "S",IDC_RAW96P,162,114,12,12,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    LTEXT           "TEST && RAW+96",IDC_STATIC,186,102,66,12,SS_CENTERIMAGE
+    LTEXT           "TEST && SAO",IDC_STATIC,186,78,66,12,SS_CENTERIMAGE
+    CTEXT           "S",IDC_SAO_TEST,252,78,12,12,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    CTEXT           "S",IDC_RAW96_TEST,252,102,12,12,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    LTEXT           "TEST && RAW+16",IDC_STATIC,186,90,66,12,SS_CENTERIMAGE
+    CTEXT           "S",IDC_RAW16_TEST,252,90,12,12,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    LTEXT           "TEST && RAW+96(P)",IDC_STATIC,186,114,60,12,
+                    SS_CENTERIMAGE
+    CTEXT           "S",IDC_RAW96P_TEST,252,114,12,12,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    LTEXT           "バッファサイズ",IDC_STATIC10,12,102,48,12,
+                    SS_CENTERIMAGE
+    CTEXT           "0KByte",IDC_BUFFERSIZE,66,102,36,12,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    LTEXT           "ＣＤへの書き込み",IDC_STATIC8,12,78,48,12,
+                    SS_CENTERIMAGE
+    CTEXT           "対応",IDC_WRITER,66,78,36,12,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    LTEXT           "標準のコマンド",IDC_STATIC9,12,90,48,12,SS_CENTERIMAGE
+    CTEXT           "無し",IDC_DEFAULT_COMMAND,66,90,36,12,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    GROUPBOX        "書き込み能力",IDC_STATIC7,6,66,264,78
+    LTEXT           "※標準のコマンドは、ライティングコマンドの自動検出で選択されるコマンドです",
+                    IDC_STATIC11,12,132,252,8
+    CTEXT           "Address",IDC_ADDRESS,66,18,36,12,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    LTEXT           "1",IDC_STATIC2,24,30,72,12,SS_CENTERIMAGE
+    LTEXT           "2",IDC_STATIC3,24,42,72,12,SS_CENTERIMAGE
+END
+
+IDD_LANGUAGE DIALOGEX 0, 0, 251, 191
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Language"
+FONT 9, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,132,168,54,18
+    PUSHBUTTON      "Cancel",IDCANCEL,192,168,54,18
+    CONTROL         "",IDC_LIST,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | 
+                    WS_BORDER | WS_TABSTOP,6,6,240,156
+END
+
+IDD_MASTERING_1 DIALOGEX 10, 24, 379, 175
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD
+EXSTYLE WS_EX_ACCEPTFILES
+FONT 9, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    CONTROL         "",IDC_TRACKLIST,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | LVS_NOSORTHEADER | 
+                    WS_BORDER | WS_TABSTOP,0,6,378,144
+    PUSHBUTTON      "UP Order",IDC_UP_ORDER,6,156,66,18
+    PUSHBUTTON      "DOWN Order",IDC_DOWN_ORDER,78,156,66,18
+END
+
+IDD_MASTERING_2 DIALOGEX 10, 24, 379, 176
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD
+EXSTYLE WS_EX_ACCEPTFILES
+FONT 9, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    CONTROL         "",IDC_TREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_SHOWSELALWAYS | TVS_FULLROWSELECT | WS_BORDER | 
+                    WS_TABSTOP,0,24,114,150
+    CONTROL         "",IDC_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | LVS_EDITLABELS | LVS_ALIGNLEFT | 
+                    WS_BORDER | WS_TABSTOP,114,24,264,150
+    EDITTEXT        IDC_VOLUME_LABEL,54,6,114,12,ES_AUTOHSCROLL
+    CTEXT           "VolumeLabel",IDC_STATIC_TXT1,6,6,48,12,SS_CENTERIMAGE
+END
+
+IDD_MASTERING_3 DIALOGEX 10, 24, 379, 176
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD
+FONT 9, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    CONTROL         "Always on top",IDC_ALWAYS_TOP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,12,18,132,8
+    CONTROL         "Notify truncated file name",IDC_NOTIFY_TRUNCATED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,36,132,12
+    GROUPBOX        "",IDC_STATIC1,12,138,354,30
+    COMBOBOX        IDC_PROTECTION_FEATURES,18,150,342,108,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_SETTING_1 DIALOGEX 10, 26, 213, 170
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_SYSMENU
+FONT 9, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    LTEXT           "temporary file for copy CD",IDC_STATIC3,0,6,168,8
+    LTEXT           "スタティック",IDC_COPYTEMPFILE,6,18,204,12,
+                    SS_CENTERIMAGE,WS_EX_STATICEDGE
+    CONTROL         "Auto save log",IDC_AUTOSAVE_LOG,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,0,42,168,8
+    LTEXT           "Place of log file",IDC_LOG_FILE,6,54,204,12,
+                    SS_CENTERIMAGE,WS_EX_STATICEDGE
+    LTEXT           "Process priority",IDC_PRIORITY_TXT,0,78,162,8
+    COMBOBOX        IDC_PRIORITY,6,90,78,60,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "検索",IDC_BROWS_TEMPFILE,180,0,30,18
+    PUSHBUTTON      "検索",IDC_BROWS_LOG,180,36,30,18
+END
+
+IDD_SETTING_2 DIALOGEX 10, 26, 213, 170
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_SYSMENU
+FONT 9, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    CONTROL         "Use external skin",IDC_SET_SKIN,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,0,6,168,8
+    LTEXT           "Place of skin file",IDC_SKIN_FILE,6,18,204,12,
+                    SS_CENTERIMAGE,WS_EX_STATICEDGE
+    PUSHBUTTON      "browse",IDC_BROWS_SKIN,180,0,30,18
+    CONTROL         "Play sound on succeed process",IDC_SET_WAV_SUCCESS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,0,42,168,8
+    LTEXT           "Place of wav file",IDC_WAV_SUCCESS_FILE,6,54,204,12,
+                    SS_CENTERIMAGE,WS_EX_STATICEDGE
+    PUSHBUTTON      "browse",IDC_BROWS_WAV_SUCCESS,180,36,30,18
+    CONTROL         "Play sound on failed process",IDC_SET_WAV_FAIL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,0,78,168,8
+    LTEXT           "Place of wav file",IDC_WAV_FAIL_FILE,6,90,204,12,
+                    SS_CENTERIMAGE,WS_EX_STATICEDGE
+    PUSHBUTTON      "browse",IDC_BROWS_WAV_FAIL,180,72,30,18
+END
+
+IDD_SETTING_3 DIALOGEX 10, 26, 213, 170
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_SYSMENU
+FONT 9, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    LTEXT           "transfer size",IDC_STATIC2,0,60,156,8
+    CONTROL         "",IDC_BUFFERSIZE,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    WS_TABSTOP,6,72,156,24
+    CTEXT           "スタティック",IDC_BUFFERSIZE_TXT,168,72,36,18,
+                    SS_CENTERIMAGE,WS_EX_STATICEDGE
+    CONTROL         "Set ASPI manager",IDC_SET_ASPI,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,0,24,168,8
+    LTEXT           "Place of aspi manager",IDC_ASPI_DLL,6,36,162,12,
+                    SS_CENTERIMAGE,WS_EX_STATICEDGE
+    PUSHBUTTON      "browse",IDC_BROWS_ASPI,174,30,30,18
+    CONTROL         "SPTI",IDC_USE_SPTI,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,0,6,168,8
+END
+
+IDD_SETTING_4 DIALOGEX 10, 26, 213, 170
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_SYSMENU
+FONT 9, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    LTEXT           "Method and speed for sub-Q analysis",IDC_STATIC1,0,6,
+                    138,12
+    COMBOBOX        IDC_SUBQMETHOD,6,24,78,90,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_SUBQSPEED,90,24,54,54,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_READSETTING_1 DIALOGEX 6, 70, 273, 104
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_SYSMENU
+FONT 9, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    GROUPBOX        "Single-Session Mode",IDC_STATIC1,0,0,270,102
+    CONTROL         "読み込みエラーの無視",IDC_IGNORE_READERROR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,132,24,132,8
+    CONTROL         "CDDA読み込みコマンドの自動検知",IDC_AUTODETECT_COMMAND,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,132,72,132,8
+    CONTROL         "CDDAの左右チャンネル入れ替え",IDC_SWAPCHANNEL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,132,60,132,8
+    COMBOBOX        IDC_AUDIOMETHOD,144,84,114,48,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "EDCのチェックを行わない(Fast error skip)",
+                    IDC_FAST_ERRORSKIP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    132,36,132,8
+    CONTROL         "サブチャンネル解析（正確なＴＯＣ取得）",
+                    IDC_ANALYZE_SUBQ,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    132,12,132,8
+    CONTROL         "バーストエラーの読み込みＡＩ",IDC_BURST_ERROR_SCAN,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,132,48,132,8
+    CONTROL         "テストモード（ファイルを作成しない）",IDC_WRITENULL,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,12,120,8
+    COMBOBOX        IDC_AUDIOSPEED,18,84,66,66,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "音楽トラックの読み込み速度",IDC_STATIC3,6,72,120,8
+    LTEXT           "データトラックの読み込み速度",IDC_STATIC4,6,42,120,8
+    COMBOBOX        IDC_DATASPEED2,18,54,66,66,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "高度な設定",IDC_EXTMENU,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,6,24,120,8
+END
+
+IDD_READSETTING_2 DIALOGEX 6, 70, 273, 104
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_SYSMENU
+FONT 9, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    GROUPBOX        "Multi-Session Mode",IDC_STATIC1,0,0,270,102
+    CONTROL         "テストモード（ファイルを作成しない）",IDC_WRITENULL,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,12,114,8
+    COMBOBOX        IDC_AUDIOSPEED,18,54,66,66,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "読み込みエラーの無視",IDC_IGNORE_READERROR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,132,36,132,8
+    LTEXT           "音楽トラックの読み込み速度",IDC_STATIC3,6,42,120,8
+    CONTROL         "EDCのチェックを行わない(Fast error skip)",
+                    IDC_FAST_ERRORSKIP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    132,48,132,8
+    CONTROL         "サブチャンネル解析（正確なＴＯＣ取得）",
+                    IDC_ANALYZE_SUBQ,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    132,24,132,8
+    CONTROL         "バーストエラーの読み込みＡＩ",IDC_BURST_ERROR_SCAN,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,132,60,132,8
+    CONTROL         "プリギャップの解析",IDC_ANALYZE_PREGAP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,132,12,132,8,
+                    WS_EX_TRANSPARENT
+    CONTROL         "高度な設定",IDC_EXTMENU,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,6,24,120,8
+END
+
+IDD_READSETTING_3 DIALOGEX 6, 70, 273, 104
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_SYSMENU
+FONT 9, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    GROUPBOX        "Read Alpha-ROM engine",IDC_STATIC1,0,0,270,102
+    CONTROL         "EDCのチェックを行わない(Fast error skip)",
+                    IDC_FAST_ERRORSKIP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    132,24,132,8
+    CONTROL         "プリギャップの解析",IDC_ANALYZE_PREGAP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,132,12,132,8,
+                    WS_EX_TRANSPARENT
+    COMBOBOX        IDC_AUDIOSPEED,18,42,66,66,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "音楽トラックの読み込み速度",IDC_STATIC3,6,30,120,8
+END
+
+IDD_READSETTING_4 DIALOGEX 6, 70, 273, 104
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_SYSMENU
+FONT 9, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    GROUPBOX        "Data Compare Mode",IDC_STATIC1,0,0,270,102
+    COMBOBOX        IDC_AUDIOSPEED,18,42,66,66,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "読み込み速度",IDC_STATIC3,6,30,120,8
+END
+
+IDD_MESSAGE DIALOGEX 0, 0, 114, 53
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog Title"
+FONT 9, "MS UI Gothic", 400, 0, 0x80
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,31,32,50,14
+    CTEXT           "スタティック",IDC_MESSAGE,6,6,102,12
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 148
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 100
+    END
+
+    IDD_MAIN_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 244
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 101
+    END
+
+    IDD_READSETTING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 276
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 196
+    END
+
+    IDD_READPROGRESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 236
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 64
+    END
+
+    IDD_SETTING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 227
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 227
+    END
+
+    IDD_READTRACK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 268
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 196
+    END
+
+    IDD_SUBQPROGRESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 188
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 64
+    END
+
+    IDD_MASTERING_FILE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 397
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 236
+    END
+
+    IDD_CREATPROGRESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 220
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 70
+    END
+
+    IDD_CALCMSF, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 167
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 94
+    END
+
+    IDD_WRITEPROGRESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 236
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 64
+    END
+
+    IDD_WRITESETTING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 276
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 184
+    END
+
+    IDD_ERASE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 52
+    END
+
+    IDD_SELECT_DRIVE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 215
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 125
+    END
+
+    IDD_DRIVE_CAPABILITY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 268
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 166
+    END
+
+    IDD_LANGUAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 244
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 184
+    END
+
+    IDD_MASTERING_1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 372
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 168
+    END
+
+    IDD_MASTERING_2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 372
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+    END
+
+    IDD_MASTERING_3, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 372
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+    END
+
+    IDD_SETTING_1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 206
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 163
+    END
+
+    IDD_SETTING_2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 206
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 163
+    END
+
+    IDD_SETTING_3, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 206
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 163
+    END
+
+    IDD_SETTING_4, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 206
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 163
+    END
+
+    IDD_READSETTING_1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 266
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 97
+    END
+
+    IDD_READSETTING_2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 266
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 97
+    END
+
+    IDD_READSETTING_3, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 266
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 97
+    END
+
+    IDD_READSETTING_4, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 266
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 97
+    END
+
+    IDD_MESSAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 107
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 46
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// RT_MANIFEST
+//
+
+IDR_MANIFEST            RT_MANIFEST             "res\\cdm.manifest"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINMENU MENU 
+BEGIN
+    POPUP "CD Manipulator(&F)"
+    BEGIN
+        MENUITEM "各種設定(&R)",                ID_READSETTING
+        MENUITEM "Language(&L)",                ID_LANGUAGE
+        MENUITEM SEPARATOR
+        MENUITEM "終了(&X)",                    ID_EXIT
+    END
+    POPUP "ツール(&T)"
+    BEGIN
+        MENUITEM "ドライブの能力を調べる(&C)",  ID_DRIVE_CAPABILITY
+        MENUITEM "MSF計算機(&M)",               ID_TOOL_MSF
+        MENUITEM SEPARATOR
+        MENUITEM "CD-RWメディアの完全初期化(&E)", ID_CD_ERASE
+        MENUITEM "CD-RWメディアの高速初期化(&F)", ID_CD_ERASE_FAST
+    END
+    POPUP "CD(&C)"
+    BEGIN
+        MENUITEM "ＣＤ再認識(&C)",              ID_CD_RECOGNIZE
+        MENUITEM "サブチャンネルの解析(&Q)",    ID_TOOL_SUBQ
+        MENUITEM SEPARATOR
+        MENUITEM "CDの複製(&D)",                ID_CD_DUPLICATE
+        MENUITEM "CDからイメージ作成(&R)",      ID_TOOL_CREATEIMAGE
+        MENUITEM "イメージを書き込み(&W)",      ID_CD_WRITE_IMAGE
+        MENUITEM "マスタリングして書き込み(&M)", ID_TOOL_MASTERING
+        MENUITEM SEPARATOR
+        MENUITEM "トラックのリッピング(&T)",    ID_TOOL_READTRACK
+    END
+    POPUP "ウィンドウ(&W)"
+    BEGIN
+        MENUITEM "TOCウィンドウ(&T)",           ID_VIEW_TOCWINDOW
+        MENUITEM "LOGウィンドウ(&L)",           ID_VIEW_LOG
+    END
+    POPUP "ヘルプ(&H)"
+    BEGIN
+        MENUITEM "ヘルプ(&H)",                  ID_HELP_HELP
+        MENUITEM SEPARATOR
+        MENUITEM "CD Manipulatorのバージョン情報(&A)", ID_VIEW_VERSION
+    END
+END
+
+IDR_TOCFRAME MENU 
+BEGIN
+    POPUP "ﾌｧｲﾙ(&F)"
+    BEGIN
+        MENUITEM "TOCをテキスト形式で保存(&T)", ID_FILE_SAVETXT
+        MENUITEM "TOCをHTML形式で保存(&H)",     ID_FILE_SAVEHTML
+        MENUITEM "TOCをCSV形式で保存(&C)",      ID_FILE_SAVECSV
+        MENUITEM "TOCをCue-Sheetとして保存(&S)", ID_FILE_SAVECUE
+    END
+    POPUP "ウィンドウ(&W)"
+    BEGIN
+        MENUITEM "閉じる(&C)",                  ID_WINDOW_CLOSE
+    END
+END
+
+IDR_LOGFRAME MENU 
+BEGIN
+    POPUP "ファイル(&F)"
+    BEGIN
+        MENUITEM "ログのクリア(&C)",            ID_CLEARLOG
+        MENUITEM SEPARATOR
+        MENUITEM "ログの保存(&L)",              ID_SAVELOG
+    END
+    POPUP "ウィンドウ(&W)"
+    BEGIN
+        MENUITEM "閉じる(&C)",                  ID_WINDOW_CLOSE
+    END
+END
+
+IDR_MASTERING_FILE MENU 
+BEGIN
+    POPUP "ウィンドウ(&W)"
+    BEGIN
+        MENUITEM "Explorer",                    1140
+        MENUITEM SEPARATOR
+        MENUITEM "閉じる(&X)",                  IDCANCEL
+    END
+    POPUP "作成(&C)"
+    BEGIN
+        MENUITEM "イメージ作成(&I)",            ID_CREATE_IMAGE
+        MENUITEM "CDへ書き込み(&W)",            ID_CREATE_CD
+        MENUITEM SEPARATOR
+        MENUITEM "CDの完全初期化",              ID_CD_ERASE
+        MENUITEM "CDの高速初期化",              176
+    END
+    POPUP "トラック(&T)"
+    BEGIN
+        MENUITEM "データトラックの挿入(&I)",    ID_EDIT_ADDDATA
+        MENUITEM "ISOファイルの挿入(&I)",       ID_TRACK_ISO
+        MENUITEM "音楽トラックの挿入(&W)",      ID_EDIT_ADDAUDIO
+        MENUITEM SEPARATOR
+        MENUITEM "トラックの削除(&R)",          ID_EDIT_DELETETRACK
+    END
+    POPUP "ファイルとフォルダ(&E)"
+    BEGIN
+        MENUITEM "フォルダの追加(&A)",          ID_EDIT_ADDFOLDER
+        MENUITEM "既存フォルダの登録(&I)",      ID_EDIT_INSERTFOLDER
+        MENUITEM "ファイルの追加(&F)",          ID_EDIT_ADDFILE
+        MENUITEM "ファイルの削除(&D)",          ID_EDIT_DELETEFOLDER
+        MENUITEM SEPARATOR
+        MENUITEM "名前の変更(&N)",              ID_EDIT_LABEL
+    END
+END
+
+IDR_HIDE_MENU MENU 
+BEGIN
+    POPUP "ProgressDialog"
+    BEGIN
+        MENUITEM "UpdateData",                  ID_UPDATE_DIALOG
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_LOGTYPE             BITMAP                  "res\\LogType.bmp"
+IDB_FILE_TREE           BITMAP                  "res\\FileTree.bmp"
+IDB_FILE_LIST           BITMAP                  "res\\FileList.bmp"
+IDB_B_CREATE_IMAGE      BITMAP                  "res\\CreateImage.bmp"
+IDB_B_WRITE_IMAGE       BITMAP                  "res\\WriteImage.bmp"
+IDB_B_DUPLICATE         BITMAP                  "res\\Duplicate.bmp"
+IDB_B_READ_TRACK        BITMAP                  "res\\ReadTrack.bmp"
+IDB_B_MASTERING         BITMAP                  "res\\Mastering.bmp"
+IDB_B_SUBQ              BITMAP                  "res\\SubQ.bmp"
+IDB_B_RECOGNIZE         BITMAP                  "res\\Recognize.bmp"
+IDB_B_EXIT              BITMAP                  "res\\Exit.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_TOTALSIZE           "TOTALSIZE MB"
+    IDS_TOTALTIME           "TOTALTIME MSF"
+    IDS_DRIVENAME           "DriveName"
+END
+
+STRINGTABLE 
+BEGIN
+    IDR_TOCFRAME            "TOC - CD Manipulator"
+    IDR_LOGFRAME            "LOG - CD Manipulator"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "CD Manipulator"
+END
+
+#endif    // 日本語 resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+LANGUAGE 17, 1
+#pragma code_page(932)
+#include "res\cdm.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // 標準コンポーネント
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
