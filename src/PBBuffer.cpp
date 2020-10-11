@@ -10,6 +10,8 @@ CPBBuffer::CPBBuffer(void)
 
 CPBBuffer::~CPBBuffer(void)
 {
+	// Elrinth fix memory leak
+	DeleteBuffer();
 }
 
 BYTE * CPBBuffer::CreateBuffer(DWORD BufferSize)
