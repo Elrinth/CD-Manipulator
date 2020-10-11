@@ -124,6 +124,7 @@ void CReadProgressDialog::OnBnClickedCancel()
 {
 	// TODO : ここにコントロール通知ハンドラ コードを追加します。
 	m_Thread.m_LogWnd->AddMessage(LOG_WARNING,MSG(17));
+	theSetting.m_canceled = true;
 	if(m_Thread.m_StopFlag){
 		OnCancel();
 	} else {
@@ -150,6 +151,7 @@ void CReadProgressDialog::OnWindowClose()
 
 	if(m_Stopped){
 	} else if(!m_Thread.m_Success){
+		theSetting.m_canceled = true;
 		CString cs;
 		cs.Format("%s\n%s",m_Message,MSG(18));
 		if(theSetting.m_WavOnFail != ""){

@@ -17,6 +17,8 @@ CSetting::CSetting(void)
 	m_CopyTempFile = "";
 	m_BurstErrorCount = 5;
 	m_BurstErrorSkip = 100;
+	m_isFinished = false;
+	m_canceled = false;
 
 	{
 		LPSTR p;
@@ -197,6 +199,120 @@ void CSetting::Load(void)
 	} else {
 		CString cs;
 		cs.Format("%s%s",m_Dir,m_LangFile);
+		m_LangFile = cs;
+	}
+	m_Lang.ReadLanguage(m_LangFile);
+
+	SetPriority();
+}
+
+void CSetting::SetElrinthSettings(LPSTR iSettings)
+{
+	//   general
+	// figure out which drive is the letter we send in...
+	m_DriveNo = ReadInt("General", "DriveNo", 0);
+	ReadString("General", "AspiDLL", "", m_AspiDLL);
+	ReadString("General", "LogFile", "", m_AutoLogFile);
+	ReadString("General", "Language", "", m_LangFile);
+	ReadString("General", "Skin", "", m_SkinFile);
+	ReadString("General", "WavOnSuccess", "", m_WavOnSuccess);
+	ReadString("General", "WavOnFail", "", m_WavOnFail);
+	ReadString("General", "LastAccessFile", "", m_LastAccessFile);
+	m_ShowLogWnd = ReadInt("General", "LogWindow", 0);
+	m_ShowTocWnd = ReadInt("General", "TOCWindow", 1);
+	m_Speed_SubQ = ReadInt("General", "SubQSpeed", 0xff);
+	m_PriorityClass = ReadInt("General", "PriorityClass", 0);
+	m_UseSPTI = ReadInt("General", "UseSPTI", 1);
+
+	m_MainDlgPos.x = ReadInt("General", "MainDlgX", 100);
+	m_MainDlgPos.y = ReadInt("General", "MainDlgy", 100);
+	if (m_MainDlgPos.x < 0) m_MainDlgPos.x = 0;
+	if (m_MainDlgPos.y < 0) m_MainDlgPos.y = 0;
+
+	m_TocWnd.left = ReadInt("General", "TocWndX", 100);
+	m_TocWnd.top = ReadInt("General", "TocWndY", 350);
+	m_TocWnd.right = ReadInt("General", "TocWndCX", 600);
+	m_TocWnd.bottom = ReadInt("General", "TocWndCY", 300);
+	if (m_TocWnd.left < 0) m_TocWnd.left = 0;
+	if (m_TocWnd.top < 0) m_TocWnd.top = 0;
+	if (m_TocWnd.right < 0) m_TocWnd.right = 0;
+	if (m_TocWnd.bottom < 0) m_TocWnd.bottom = 0;
+
+	m_LogWnd.left = ReadInt("General", "LogWndX", 30);
+	m_LogWnd.top = ReadInt("General", "LogWndY", 30);
+	m_LogWnd.right = ReadInt("General", "LogWndCX", 400);
+	m_LogWnd.bottom = ReadInt("General", "LogWndCY", 200);
+	if (m_LogWnd.left < 0) m_LogWnd.left = 0;
+	if (m_LogWnd.top < 0) m_LogWnd.top = 0;
+	if (m_LogWnd.right < 0) m_LogWnd.right = 0;
+	if (m_LogWnd.bottom < 0) m_LogWnd.bottom = 0;
+
+	//   read setting
+	m_TestReadMode = IntToBool(ReadInt("ReadSetting", "TestReadMode", 0));
+	m_IgnoreError = IntToBool(ReadInt("ReadSetting", "IgnoreError", 0));
+	m_FastErrorSkip = IntToBool(ReadInt("ReadSetting", "FastErrorSkip", 0));
+	m_SwapChannel = IntToBool(ReadInt("ReadSetting", "SwapAudioChannel", 0));
+	m_AutoDetectMethod = IntToBool(ReadInt("ReadSetting", "AutoDetectCommand", 1));
+	m_Speed_Audio = ReadInt("ReadSetting", "AudioSpeed", 0xff);
+	m_Speed_Data = ReadInt("ReadSetting", "DataSpeed", 0xff);
+	m_ReadAudioMethod = ReadInt("ReadSetting", "ReadCommand", 1);
+	m_SubQMethod = ReadInt("ReadSetting", "SubQMethod", 0);
+	m_AnalyzeSubQ = IntToBool(ReadInt("ReadSetting", "AnalyzeSubQ", 0));
+	m_BurstErrorScan = ReadInt("ReadSetting", "BurstErrorScan", 0);
+	//	m_MultiSession = ReadInt("ReadSetting","MultiSession",0);
+	m_AnalyzePregap = ReadInt("ReadSetting", "AnalyzePregap", 0);
+	m_ExtSetting_Read = ReadInt("ReadSetting", "ExtendedSettings", 0);
+	m_ReadEngine = ReadInt("ReadSetting", "Engine", 0);
+
+	//   write setting
+	m_Write_BurnProof = ReadInt("WriteSetting", "BurnProof", 1);
+	m_Write_EjectTray = ReadInt("WriteSetting", "EjectTray", 1);
+	m_Write_TestMode = ReadInt("WriteSetting", "TestMode", 0);
+	m_Write_Opc = ReadInt("WriteSetting", "PowerCalibration", 1);
+	m_Write_CheckDrive = ReadInt("WriteSetting", "CheckDrive", 1);
+	m_Write_WritingMode = ReadInt("WriteSetting", "WritingMode", 0);
+	m_Write_AutoDetectMethod = ReadInt("WriteSetting", "AutoDetectCommand", 1);
+	m_Write_Speed = ReadInt("WriteSetting", "Speed", 255);
+	m_Write_Buffer = ReadInt("WriteSetting", "Buffer", 15);
+	m_ExtSetting_Write = ReadInt("WriteSetting", "ExtendedSettings", 0);
+
+	{
+		OSVERSIONINFO osver;
+
+		osver.dwOSVersionInfoSize = sizeof(osver);
+		if (GetVersionEx(&osver)) {
+			if (osver.dwPlatformId != VER_PLATFORM_WIN32_NT) {
+				m_UseSPTI = 0;
+			}
+		}
+	}
+
+	//   copy setting
+	ReadString("CopySetting", "TemporaryFile", "", m_CopyTempFile);
+
+	//   mastering setting
+	m_Mastering_AlwaysOnTop = ReadInt("MasteringSetting", "AlwaysOnTop", 0);
+	m_Mastering_NotifyTruncated = ReadInt("MasteringSetting", "NotifyTruncated", 1);
+#if COPY_PROTECTION
+	m_CopyProtectionSize = ReadInt("MasteringSetting", "CopyProtectionSize", 0);
+#else
+	m_CopyProtectionSize = 0;
+#endif
+	//   load language
+	if (m_LangFile == "") {
+		CLanguageDialog dlg;
+
+		if (dlg.DoModal() == IDCANCEL) {
+			m_LangFile.Format("%sJapanese.cml", m_Dir);
+		}
+	}
+	else if (m_LangFile[0] == '\\'
+		|| (m_LangFile[0] >= 'a' && m_LangFile[0] <= 'z' && m_LangFile[1] == ':')
+		|| (m_LangFile[0] >= 'A' && m_LangFile[0] <= 'Z' && m_LangFile[1] == ':')) {
+	}
+	else {
+		CString cs;
+		cs.Format("%s%s", m_Dir, m_LangFile);
 		m_LangFile = cs;
 	}
 	m_Lang.ReadLanguage(m_LangFile);

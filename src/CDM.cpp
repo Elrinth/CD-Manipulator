@@ -1,7 +1,8 @@
-// Hermit2.cpp : ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ÌƒNƒ‰ƒX“®ì‚ğ’è‹`‚µ‚Ü‚·B
+// Hermit2.cpp : ï¿½Aï¿½vï¿½ï¿½ï¿½Pï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½ÌƒNï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 //
 
 #include "stdafx.h"
+#include "afxwin.h"
 #include "CDM.h"
 #include "CDMDlg.h"
 #include "Setting.h"
@@ -10,58 +11,175 @@
 #define new DEBUG_NEW
 #endif
 
-
 // CHermit2App
 
 BEGIN_MESSAGE_MAP(CCDMApp, CWinApp)
-	ON_COMMAND(ID_HELP, CWinApp::OnHelp)
+ON_COMMAND(ID_HELP, CWinApp::OnHelp)
 END_MESSAGE_MAP()
 
-
-// CHermit2App ƒRƒ“ƒXƒgƒ‰ƒNƒVƒ‡ƒ“
+// CHermit2App ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½Vï¿½ï¿½ï¿½ï¿½
 
 CCDMApp::CCDMApp()
 {
-	// TODO: ‚±‚ÌˆÊ’u‚É\’z—pƒR[ƒh‚ğ’Ç‰Á‚µ‚Ä‚­‚¾‚³‚¢B
-	// ‚±‚±‚É InitInstance ’†‚Ìd—v‚È‰Šú‰»ˆ—‚ğ‚·‚×‚Ä‹Lq‚µ‚Ä‚­‚¾‚³‚¢B
+    // TODO: ï¿½ï¿½ï¿½ÌˆÊ’uï¿½É\ï¿½zï¿½pï¿½Rï¿½[ï¿½hï¿½ï¿½Ç‰ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ InitInstance ï¿½ï¿½ï¿½Ìdï¿½vï¿½Èï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×‚Ä‹Lï¿½qï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
 }
 
-
-// CHermit2App ƒIƒuƒWƒFƒNƒg‚Å‚·B
+// CHermit2App ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Å‚ï¿½ï¿½B
 
 CCDMApp theApp;
 CSetting theSetting;
 CThemeController theTheme;
 
-// CHermit2App ‰Šú‰»
+// CHermit2App ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+
+LPSTR *CommandLineToArgvA(LPSTR lpCmdLine, INT *pNumArgs)
+{
+    int retval;
+    retval = MultiByteToWideChar(CP_ACP, MB_ERR_INVALID_CHARS, lpCmdLine, -1, NULL, 0);
+    if (!SUCCEEDED(retval))
+        return NULL;
+
+    LPWSTR lpWideCharStr = (LPWSTR)malloc(retval * sizeof(WCHAR));
+    if (lpWideCharStr == NULL)
+        return NULL;
+
+    retval = MultiByteToWideChar(CP_ACP, MB_ERR_INVALID_CHARS, lpCmdLine, -1, lpWideCharStr, retval);
+    if (!SUCCEEDED(retval))
+    {
+        free(lpWideCharStr);
+        return NULL;
+    }
+
+    int numArgs;
+    LPWSTR *args;
+    args = CommandLineToArgvW(lpWideCharStr, &numArgs);
+    free(lpWideCharStr);
+    if (args == NULL)
+        return NULL;
+
+    int storage = numArgs * sizeof(LPSTR);
+    for (int i = 0; i < numArgs; ++i)
+    {
+        BOOL lpUsedDefaultChar = FALSE;
+        retval = WideCharToMultiByte(CP_ACP, 0, args[i], -1, NULL, 0, NULL, &lpUsedDefaultChar);
+        if (!SUCCEEDED(retval))
+        {
+            LocalFree(args);
+            return NULL;
+        }
+
+        storage += retval;
+    }
+
+    LPSTR *result = (LPSTR *)LocalAlloc(LMEM_FIXED, storage);
+    if (result == NULL)
+    {
+        LocalFree(args);
+        return NULL;
+    }
+
+    int bufLen = storage - numArgs * sizeof(LPSTR);
+    LPSTR buffer = ((LPSTR)result) + numArgs * sizeof(LPSTR);
+    for (int i = 0; i < numArgs; ++i)
+    {
+        _ASSERT(bufLen > 0);
+        BOOL lpUsedDefaultChar = FALSE;
+        retval = WideCharToMultiByte(CP_ACP, 0, args[i], -1, buffer, bufLen, NULL, &lpUsedDefaultChar);
+        if (!SUCCEEDED(retval))
+        {
+            LocalFree(result);
+            LocalFree(args);
+            return NULL;
+        }
+
+        result[i] = buffer;
+        buffer += retval;
+        bufLen -= retval;
+    }
+
+    LocalFree(args);
+
+    *pNumArgs = numArgs;
+    return result;
+}
 
 BOOL CCDMApp::InitInstance()
 {
-	// ƒAƒvƒŠƒP[ƒVƒ‡ƒ“@ƒ}ƒjƒtƒFƒXƒg‚ª@visual ƒXƒ^ƒCƒ‹‚ğ—LŒø‚É‚·‚é‚½‚ß‚ÉA
-	// ComCtl32.dll ƒo[ƒWƒ‡ƒ“ 6@ˆÈ~‚Ìg—p‚ğw’è‚·‚éê‡‚ÍA
-	// Windows XP ‚É@InitCommonControls() ‚ª•K—v‚Å‚·B‚³‚à‚È‚¯‚ê‚ÎAƒEƒBƒ“ƒhƒEì¬‚Í‚·‚×‚Ä¸”s‚µ‚Ü‚·B
-	theSetting.Load();
+    // ï¿½Aï¿½vï¿½ï¿½ï¿½Pï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½@ï¿½}ï¿½jï¿½tï¿½Fï¿½Xï¿½gï¿½ï¿½ï¿½@visual ï¿½Xï¿½^ï¿½Cï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½É‚ï¿½ï¿½é‚½ï¿½ß‚ÉA
+    // ComCtl32.dll ï¿½oï¿½[ï¿½Wï¿½ï¿½ï¿½ï¿½ 6ï¿½@ï¿½È~ï¿½Ìgï¿½pï¿½ï¿½ï¿½wï¿½è‚·ï¿½ï¿½ê‡ï¿½ÍA
+    // Windows XP ï¿½É@InitCommonControls() ï¿½ï¿½ï¿½Kï¿½vï¿½Å‚ï¿½ï¿½Bï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½ÎAï¿½Eï¿½Bï¿½ï¿½ï¿½hï¿½Eï¿½ì¬ï¿½Í‚ï¿½ï¿½×‚Äï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
+    theSetting.Load();
 
-	InitCommonControls();
+    InitCommonControls();
 
-	CWinApp::InitInstance();
+    CWinApp::InitInstance();
 
+    LPSTR wat = GetCommandLineA();
+    int argc;
+    LPSTR *argv = CommandLineToArgvA(wat, &argc);
+    bool nextArgIsDriveIndex = false;
+    bool nextArgIsOutputPath = false;
 
-	CCDMDlg dlg;
-	m_pMainWnd = &dlg;
-	INT_PTR nResponse = dlg.DoModal();
-	if (nResponse == IDOK)
-	{
-		// TODO: ƒ_ƒCƒAƒƒO‚ª <OK> ‚ÅÁ‚³‚ê‚½‚ÌƒR[ƒh‚ğ
-		//       ‹Lq‚µ‚Ä‚­‚¾‚³‚¢B
-	}
-	else if (nResponse == IDCANCEL)
-	{
-		// TODO: ƒ_ƒCƒAƒƒO‚ª <ƒLƒƒƒ“ƒZƒ‹> ‚ÅÁ‚³‚ê‚½‚ÌƒR[ƒh‚ğ
-		//       ‹Lq‚µ‚Ä‚­‚¾‚³‚¢B
-	}
+    int driveIndex = -1;
+    LPSTR outputPath;
 
-	// ƒ_ƒCƒAƒƒO‚Í•Â‚¶‚ç‚ê‚Ü‚µ‚½BƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ÌƒƒbƒZ[ƒW ƒ|ƒ“ƒv‚ğŠJn‚µ‚È‚¢‚Å
-	// ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ğI—¹‚·‚é‚½‚ß‚É FALSE ‚ğ•Ô‚µ‚Ä‚­‚¾‚³‚¢B
-	return FALSE;
+    for (int i = 0; i < argc; i++)
+    {
+        LPSTR arg = argv[i];
+        if (nextArgIsDriveIndex)
+        {
+            driveIndex = _ttoi(arg);
+            nextArgIsDriveIndex = false;
+        }
+        if (strcmp(arg, LPSTR("-driveindex")) == 0)
+        {
+            nextArgIsDriveIndex = true;
+        }
+
+        if (nextArgIsOutputPath)
+        {
+            outputPath = arg;
+            nextArgIsOutputPath = false;
+        }
+        if (strcmp(arg, LPSTR("-o")) == 0)
+        {
+            nextArgIsOutputPath = true;
+        }
+    }
+
+    if (outputPath != NULL && driveIndex != -1)
+    {
+        theSetting.m_LastAccessFile = outputPath;
+        theSetting.m_DriveNo = driveIndex;
+        theSetting.m_autostart = true;
+    }
+
+    CCDMDlg dlg;
+    m_pMainWnd = &dlg;
+    INT_PTR nResponse = dlg.DoModal();
+    if (nResponse == IDOK)
+    {
+        // TODO: ï¿½_ï¿½Cï¿½Aï¿½ï¿½ï¿½Oï¿½ï¿½ <OK> ï¿½Åï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½ï¿½ÌƒRï¿½[ï¿½hï¿½ï¿½
+        //       ï¿½Lï¿½qï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
+    }
+    else if (nResponse == IDCANCEL)
+    {
+        // TODO: ï¿½_ï¿½Cï¿½Aï¿½ï¿½ï¿½Oï¿½ï¿½ <ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Zï¿½ï¿½> ï¿½Åï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½ï¿½ÌƒRï¿½[ï¿½hï¿½ï¿½
+        //       ï¿½Lï¿½qï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
+    }
+
+    // ï¿½_ï¿½Cï¿½Aï¿½ï¿½ï¿½Oï¿½Í•Â‚ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½ï¿½Bï¿½Aï¿½vï¿½ï¿½ï¿½Pï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Ìƒï¿½ï¿½bï¿½Zï¿½[ï¿½W ï¿½|ï¿½ï¿½ï¿½vï¿½ï¿½ï¿½Jï¿½nï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½
+    // ï¿½Aï¿½vï¿½ï¿½ï¿½Pï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½é‚½ï¿½ß‚ï¿½ FALSE ï¿½ï¿½Ô‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
+    //delete[] outputPath;
+    LocalFree(argv);
+    if (theSetting.m_canceled)
+    {
+        char *s = "Canceled";
+        AllocConsole();
+        DWORD NumberOfBytesWritten = 0;
+        WriteFile(GetStdHandle(STD_OUTPUT_HANDLE), s, lstrlen(s), &NumberOfBytesWritten, 0);
+        delete[] s;
+    }
+    return FALSE;
 }

@@ -28,13 +28,17 @@ public:
 	BOOL m_Mastering_NotifyTruncated;
 	void Load(void);
 	void Save(void);
+	void SetElrinthSettings(LPSTR);
 	int m_DriveNo;
+	BOOL m_isFinished;
 	BOOL m_Write_BurnProof;
 	BOOL m_Write_EjectTray;
 	BOOL m_Write_Opc;
 	BOOL m_Write_TestMode;
 	BOOL m_Write_CheckDrive;
 	BOOL m_Write_AutoDetectMethod;
+	BOOL m_autostart;
+	BOOL m_canceled;
 	int m_Write_WritingMode;
 	BYTE m_Write_Speed;
 	int m_Write_Buffer;

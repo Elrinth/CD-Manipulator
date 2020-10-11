@@ -228,6 +228,9 @@ BOOL CCDMDlg::OnInitDialog()
 	}
 
 	UpdateData(FALSE);
+	if (theSetting.m_autostart) {
+		OnToolCreateimage();
+	}
 	return TRUE;  // フォーカスをコントロールに設定した場合を除き、TRUE を返します。
 }
 
@@ -282,6 +285,10 @@ void CCDMDlg::OnSysCommand(UINT nID, LPARAM lParam)
 
 void CCDMDlg::OnPaint() 
 {
+	if (theSetting.m_autostart) {
+		OnClose();
+		return;
+	}
 	if (IsIconic())
 	{
 		CPaintDC dc(this); // 描画のデバイス コンテキスト
@@ -303,7 +310,6 @@ void CCDMDlg::OnPaint()
 	{
 		CDialog::OnPaint();
 	}
-
 }
 
 //ユーザーが最小化したウィンドウをドラッグしているときに表示するカーソルを取得するために、
@@ -340,6 +346,7 @@ void CCDMDlg::OnBnClickedCancel()
 
 void CCDMDlg::OnClose()
 {
+	CDialog::OnClose();
 	// TODO : ここにメッセージ ハンドラ コードを追加するか、既定の処理を呼び出します。
 	if(m_TocWnd != NULL){
 		delete m_TocWnd;
@@ -387,9 +394,11 @@ void CCDMDlg::OnToolCreateimage()
 {
 	// TODO : ここにコマンド ハンドラ コードを追加します。
 	CReadSettingDialog Dlg;
-
+	if (theSetting.m_autostart) {
+		Dlg.m_ImageName = CString(theSetting.m_LastAccessFile);
+	}
 	Dlg.m_CD = &m_CD;
-	if(Dlg.DoModal() == IDOK){
+	if(theSetting.m_autostart || Dlg.DoModal() == IDOK){
 		CReadProgressDialog ReadDlg;
 		while(1){
 			if(theSetting.m_ReadEngine == 0 && m_CD.ReadTOC()){
