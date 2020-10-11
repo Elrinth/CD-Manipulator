@@ -1,17 +1,17 @@
-// Hermit2.h : PROJECT_NAME ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ÌƒƒCƒ“ ƒwƒbƒ_[ ƒtƒ@ƒCƒ‹‚Å‚·B
+// Hermit2.h : PROJECT_NAME ï¿½Aï¿½vï¿½ï¿½ï¿½Pï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Ìƒï¿½ï¿½Cï¿½ï¿½ ï¿½wï¿½bï¿½_ï¿½[ ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Å‚ï¿½ï¿½B
 //
 
 #pragma once
 
 #ifndef __AFXWIN_H__
-	#error include 'stdafx.h' before including this file for PCH
+#error include 'stdafx.h' before including this file for PCH
 #endif
 
-#include "resource.h"		// ƒƒCƒ“ ƒVƒ“ƒ{ƒ‹
+#include "resource.h" // ï¿½ï¿½ï¿½Cï¿½ï¿½ ï¿½Vï¿½ï¿½ï¿½{ï¿½ï¿½
 
-#define APP_VERSION		"2.70 Final with Elrinth command line functionality!"
+#define APP_VERSION "2.71 Final with Elrinth command line functionality!"
 // CHermit2App:
-// ‚±‚ÌƒNƒ‰ƒX‚ÌÀ‘•‚É‚Â‚¢‚Ä‚ÍAHermit2.cpp ‚ğQÆ‚µ‚Ä‚­‚¾‚³‚¢B
+// ï¿½ï¿½ï¿½ÌƒNï¿½ï¿½ï¿½Xï¿½Ìï¿½ï¿½ï¿½ï¿½É‚Â‚ï¿½ï¿½Ä‚ÍAHermit2.cpp ï¿½ï¿½ï¿½Qï¿½Æ‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
 //
 
 class CCDMApp : public CWinApp
@@ -19,11 +19,11 @@ class CCDMApp : public CWinApp
 public:
 	CCDMApp();
 
-// ƒI[ƒo[ƒ‰ƒCƒh
-	public:
+	// ï¿½Iï¿½[ï¿½oï¿½[ï¿½ï¿½ï¿½Cï¿½h
+public:
 	virtual BOOL InitInstance();
 
-// À‘•
+	// ï¿½ï¿½ï¿½ï¿½
 
 	DECLARE_MESSAGE_MAP()
 };
