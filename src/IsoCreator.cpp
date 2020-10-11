@@ -710,7 +710,7 @@ void CIsoCreator::CreateDirRecord(CFileList * List,int Type,DWORD Current,DWORD 
 	struct tm *tmp;
 	CTime tme = CTime::GetCurrentTime();
 
-	tmp = tme.GetGmtTm();
+	tmp = tme.GetGmtTm( NULL );
 	st.wYear = tmp->tm_year + 1900;
 	st.wMonth = tmp->tm_mon + 1;
 	st.wDay = tmp->tm_mday;
